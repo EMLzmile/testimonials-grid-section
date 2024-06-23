@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --verydark-grayish-blue: hsl(217, 19%, 35%);
+  --verydark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--light-grayish-blue);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+body, p{
+  font-size: 13px;
+  font-weight: 500;
+}
+
+main{
+  max-width: 80%;
+  margin: auto;
+}
+
+main,
+.left,
+.top,
+.bottom {
+  display: flex;
+}
+
+.left,
+.right {
+  min-height: 100%;
+}
+
+.left {
+  flex: 1 0 75%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top, .bottom{
+  height: 50%;
+}
+.top{
+  margin-bottom: 20px;
+}
+.section {
+  height: 100%;
+  margin-right: 20px;
+  padding: 20px;
+  background: var(--white);
+  color: var(--verydark-grayish-blue);
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px hsla(0, 0%, 81%, 0.2);
+}
+
+.top .section {
+  background: var(--verydark-grayish-blue);
+  color: var(--white);
+}
+
+.top .section:first-child {
+  flex: 1 0 60%;
+  background: url('images/bg-pattern-quotation.svg') no-repeat, var(--moderate-violet);
+  background-position: 90% 0%;
+}
+
+.bottom .section:last-child {
+  flex: 1 0 60%;
+  background: var(--verydark-blackish-blue);
+  color: var(--white);
+}
+
+.right .section{
+  margin: 0;
+}
+.profil {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.profil .img {
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.bottom .section:last-child .img img {
+  border-color: var(--moderate-violet)
+}
+
+.img img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--light-gray);
+}
+
+.profil .name {
+  opacity: 1;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profil p {
+  opacity: 0.5;
+}
+
+.bio {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.motivation {
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+
+  main,
+  .top,
+  .bottom,
+  .left,
+  .right {
+    display: block;
+  }
+  
+  main{
+    max-width: none;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  .section{
+    margin: 0 auto 20px;
+  }
+
+  footer {
+    position: static;
+  }
+}
